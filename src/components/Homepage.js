@@ -1,17 +1,12 @@
 import React from 'react'
 import NavBar from './Navbar'
 
-export default class Homepage extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
+const Homepage = () => {
         return (
             <div>
                 <NavBar />
-                
+                {/* Brand Image */}
+                {/* Projects */}
             </div>
         )
-    }
 }
