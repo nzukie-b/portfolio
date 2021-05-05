@@ -2,27 +2,75 @@ import React from 'react'
 
 
 const NavBar = () => {
-    var imageStyle = {
-        width: '30px',
-        height: '30px'
+    let active = false
+    const toggleActive = () => {
+        active = !active
     }
+
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <img src="https://ui-ex.com/images/pokeball-transparent-8-bit.png" alt="Pokémon" style={imageStyle}></img>
-            <a className="navbar-brand">SOME IMAGE w/ text</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div className="navbar-nav">
-                {/* Smooth Scroll to sections */}
-                    {/* <Link className="nav-item nav-link" to="/home">Home <span className="sr-only">(current)</span></Link>
-                    <Link className="nav-item nav-link" to="/search">Search</Link>
-                    <Link className="nav-item nav-link" to="/training">Training</Link> */}
-                </div>
+        <div>
+            <div id="content">
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                    <div className="container-fluid">
+                        <button type="button" id="sidebarCollapse" 
+                        className={`btn btn-info ${active ? "active" : ""}`} onClick={toggleActive} >
+                            <i className="fas fa-align-left"></i>
+                            <span>Toggle Sidebar</span>
+                        </button>
+
+                    </div>
+                </nav>
             </div>
-        </nav>
+            <div classNameName='wrapper'>
+                <nav id='sidebar'>
+                    <div className="sidebar-header">
+                        <h3>ＮＺＵＫＩＥ</h3>
+                    </div>
+
+                    <ul className="list-unstyled components">
+                        <p>Dummy Heading</p>
+                        <li className="active">
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Home</a>
+                            <ul className="collapse list-unstyled" id="homeSubmenu">
+                                <li>
+                                    <a href="#">Home 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Home 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Home 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Pages</a>
+                            <ul className="collapse list-unstyled" id="pageSubmenu">
+                                <li>
+                                    <a href="#">Page 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Page 2</a>
+                                </li>
+                                <li>
+                                    <a href="#">Page 3</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
     )
 }
 
