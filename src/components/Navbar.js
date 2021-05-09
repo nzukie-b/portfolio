@@ -1,34 +1,38 @@
 import React from 'react'
 
+class NavBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { active: false }
 
-const NavBar = () => {
-    let active = false
-    const toggleActive = () => {
-        active = !active
-    }
+        handleClick = () => {
+            this.setState((state) => ({
+                active: !(state.active)
+            }));
+        }
 
-    return (
-        <div>
-            <div id="content">
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <div className="container-fluid">
-                        <button type="button" id="sidebarCollapse" 
-                        className={`btn btn-info ${active ? "active" : ""}`} onClick={toggleActive} >
-                            <i className="fas fa-align-left"></i>
-                            <span>Toggle Sidebar</span>
-                        </button>
+    };
+    render() {
+        return (
+            <div className='wrapper'>
+                <div id="content">
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                        <div className="container-fluid">
+                            <button type="button" id="sidebarCollapse"
+                                className={`btn btn-info ${this.state.active ? "active" : ""}`} onClick={this.handleClick} >
+                                <i className="fas fa-align-left"></i>
+                                <span>Toggle Sidebar</span>
+                            </button>
 
-                    </div>
-                </nav>
-            </div>
-            <div classNameName='wrapper'>
+                        </div>
+                    </nav>
+                </div>
                 <nav id='sidebar'>
                     <div className="sidebar-header">
                         <h3>ＮＺＵＫＩＥ</h3>
                     </div>
 
                     <ul className="list-unstyled components">
-                        <p>Dummy Heading</p>
                         <li className="active">
                             <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">Home</a>
                             <ul className="collapse list-unstyled" id="homeSubmenu">
@@ -69,9 +73,8 @@ const NavBar = () => {
                     </ul>
                 </nav>
             </div>
-        </div>
-
-    )
+        )
+    }
 }
 
 export default NavBar
