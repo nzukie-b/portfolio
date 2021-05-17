@@ -1,10 +1,10 @@
 import React from 'react'
-import NavBar from './Navbar'
+import Navbar from './Navbar'
 
 const Homepage = () => {
         return (
             <div>
-                <NavBar />
+                <Navbar />
                 {/* Brand Image */}
                 {/* Projects */}
             </div>
