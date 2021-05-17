@@ -1,8 +1,5 @@
-$bg_color: #f4f5f9;
+@import "./components/navbar";
 
-.App {
-    text-align: left;
-}
 
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap");
 :root {
@@ -13,22 +10,12 @@ $bg_color: #f4f5f9;
     --typing-font: 3rem;
 }
 
-nav {
-    margin: 0;
-    padding: 0;
-}
+// nav {
+//     margin: 0;
+//     padding: 0;
+// }
 
 body {
     font-family: "Raleway";
 }
-.App {
-    display: flex;
-    width: 100vw;
-    min-height: 100vh;
-}
-/* .condiv class is for the right side content container*/
-.condiv {
-    padding: 100px;
-    background-color: $bg_color;
-    flex: var(--condiv-flex);
-}
+

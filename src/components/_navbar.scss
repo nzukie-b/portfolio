@@ -6,15 +6,16 @@ nav {
     padding: 60px 30px 0px 30px;
     flex: var(--sidebar-flex);
     background: $grad_start;
-    background: linear-gradient(180deg, $grad_start 50%, grad_end 80%);
+    background: linear-gradient(45deg, $grad_start 50%, $grad_end 80%);
 }
+
 
 nav ul {
     font-size: var(--fontsize-nav);
     text-align: center;
     list-style-type: none;
     text-decoration: none;
-    color: $text_color !important;
+    color: $text_color
 }
 nav ul li {
     margin: 40px;
@@ -22,4 +23,5 @@ nav ul li {
 
 .active {
     font-weight: bolder;
+    font-size: x-large;
 }

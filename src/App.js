@@ -1,14 +1,13 @@
-import logo from './logo.svg';
 import './App.scss';
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import Homepage from "./components/Homepage"
 
 
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Homepage/>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
