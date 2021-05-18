@@ -1,0 +1,10 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import '~react-pro-sidebar/dist/scss/styles.scss';
+
+.pro-sidebar {
+    height: 100vh;
+}

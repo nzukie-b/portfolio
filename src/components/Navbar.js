@@ -1,34 +1,47 @@
 import React, { useState } from 'react';
 import Item from './Item'
+import { ProSidebar, Menu, MenuItem } from 'react-pro-sidebar'
 
 const Navbar = () => {
-    // TODO: Constants
-    const [activeItem, setActiveItem] = useState(null)
+    const [activeItem, setActiveItem] = useState(false)
+    const [toggled, setToggled] = useState(false);
     const handleClick = (name) => {
         setActiveItem(name)
-
     }
-    const navItems = ["home", "about", "education", "projects", "contact"].map((key) => {
+
+    const handleToggle = (name) => {
+        setToggled(name)
+    }
+
+    // // // TODO: Constants for map
+    // // const [activeItem, setActiveItem] = useState(false)
+    // // const [toggled, setToggled] = useState(false);
+    // const handleClick = props.handleClick;
+    // const handleToggle = props.handleToggle;
+    // const activeItem = props.activeItem
+
+    const navItems = ["home", "about", "resume", "projects", "contact"].map((key) => {
         return (
-            <li className={`navItem ${activeItem === key ? 'active' : ''}`} key={key} onClick={() => handleClick(key)}>
-                <Item name={key} toLink={`/${key}`}/>
-            </li>
+            <MenuItem className={`navItem ${activeItem === key ? 'active' : ''}`} key={key} onClick={() => handleClick(key)}>
+                <Item name={key.charAt(0).toUpperCase().concat(key.substring(1))} toLink={`/${key}`} />
+            </MenuItem>
         )
     });
 
-
-
     return (
-        <nav>
-            <ul>
+        <ProSidebar onToggle={handleToggle} breakPoint='sm' toggled={toggled}>
+            <Menu>
                 {navItems}
-                {/* <Item key={"Home"} name="Home" toLink="/" activeItem={activeItem} handleClick={handleClick} ></Item>
-                <Item key={"About"} name="About" toLink="/about" ></Item>
-                <Item key={"Education"} name="Education" toLink="/education"></Item>
-                <Item key={"Projects"} name="Projects" toLink="/projects"></Item>
-                <Item key={"Contact"} name="Contact" toLink="/contact"></Item> */}
-            </ul>
-        </nav>
+            </Menu>
+        </ProSidebar>
+        // <nav className='navbar navbar-default'>
+        //     <div className='container-fluid'>
+        //         <ul>
+        //             {navItems}
+        //         </ul>
+        //     </div>
+
+        // </nav>
     );
 }
 export default Navbar
