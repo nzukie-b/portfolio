@@ -3,10 +3,10 @@ $grad_end: #6B8C60;
 $text_color: #d2e1e1;
 
 nav {
-    padding: 60px 30px 0px 30px;
+    // padding: 60px 30px 0px 30px;
     flex: var(--sidebar-flex);
     background: $grad_start;
-    background: linear-gradient(45deg, $grad_start 50%, $grad_end 80%);
+    // background: linear-gradient(45deg, $grad_start 50%, $grad_end 80%);
 }
 
 a {
@@ -16,16 +16,17 @@ a {
 nav {
     ul {
         font-size: var(--fontsize-nav);
-        text-align: center;
-        list-style-type: none;
-        text-decoration: none;
     }
 }
-nav ul li {
-    margin: 40px;
-}
-
 .active {
     font-weight: bolder;
     font-size: x-large;
+}
+
+.navItem {
+    padding: .2rem;
+    margin: 1.2rem;
+    text-align: center;
+
+    // border: 2px solid $text_color;
 }

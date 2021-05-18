@@ -29,11 +29,15 @@ const Navbar = () => {
     });
 
     return (
-        <ProSidebar onToggle={handleToggle} breakPoint='sm' toggled={toggled}>
-            <Menu>
-                {navItems}
-            </Menu>
-        </ProSidebar>
+        <div>
+            <button className='btn btn-success mx-2' onClick={() => setToggled(!toggled)}>YO</button>
+            <ProSidebar onToggle={handleToggle} breakPoint='lg' toggled={toggled} >
+                <Menu>
+                    {navItems}
+                </Menu>
+            </ProSidebar>
+
+        </div>
         // <nav className='navbar navbar-default'>
         //     <div className='container-fluid'>
         //         <ul>
